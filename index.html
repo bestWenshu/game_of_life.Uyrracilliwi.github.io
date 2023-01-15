@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conway's Game of Life</title>
+  <style>
+    /* CSS styles for the grid */
+    .container {
+      display: flex;
+      flex-direction: column; /* Set flex direction to column, so items are stacked vertically */
+      align-items: center;
+    }
+    .buttons {
+      margin-left: 10px; /* add a margin to separate the buttons from the grid */
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+      padding: 12px 20px; /* Some padding */
+      border: none; /* No border */
+      border-radius: 4px; /* Rounded corners */
+      cursor: pointer; /* Change cursor on hover */
+      font-size: 16px; /* Change font size */
+      text-transform: uppercase; /* Uppercase text */
+      box-shadow: 2px 2px 2px #888888; /* Add a subtle drop shadow */
+      transition: background-color 0.2s ease-out; /* Add a transition effect for hover */
+    }
+    .buttons:hover{
+      background-color: #3e8e41;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(20, 20px);
+      grid-template-rows: repeat(20, 20px);
+      grid-gap: 1px;
+    }
+    .cell {
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: solid 1px #ccc; /* Add a solid border around each cell */
+    }
+    .cell.alive {
+      background-color: black;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class = "container">
+    <div id = "grid" class = "grid"></div>
+    <div class="buttons">
+      <button id="start-button">Start</button>
+      <button id="stop-button" disabled>Stop</button>
+      <button id="clear-button">Clear</button>
+    </div>
+  </div>
+
+
+  <script src="game-of-life.js"></script>
+  <div id="iteration-count"></div>
+</body>
+</html>
+
